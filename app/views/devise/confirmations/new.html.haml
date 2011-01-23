@@ -1,0 +1,14 @@
+#new_confirmation.key_container
+  .col50{:style => "margin-top: 13%"}
+    = form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f|
+      = devise_error_messages!
+
+      %p
+        = f.label :email, :class => 'important'
+        = f.text_field :email, :class => 'important text qtip-input', :title => "Enter the email address you used when you signed up to WriteIdeally - this is where your welcome pack will be sent."
+
+      %p
+        = f.submit "Resend Welcome Pack", :class => 'key-submit', :style => "font-size: 0.75em;"
+  .col50.right.text
+    You should receive a welcome pack if not instantly, then within one or two hours of signing up. Even on the Internet though, things can get lost in the post! Use this form to send another welcome pack that will contain some getting started help, and a link to activate your account. If you are still not receiving your welcome pack, then it is best to contact us.
+

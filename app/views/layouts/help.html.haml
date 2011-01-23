@@ -1,0 +1,36 @@
+!!! 5
+%html
+  %head
+    %title= t('help.title')
+    <link rel = 'icon' href = '/favicon.ico' />
+    <link rel = 'shortcut icon' type = 'application/x-icon' href = '/favicon.ico' />
+    = stylesheet_link_tag ['reset', 'fonts', 'application', 'help']
+
+    = javascript_include_tag ['jquery.js', 'rails.js'], :cache => 'writeideally_help.js'
+    = csrf_meta_tag
+
+    = yield :head
+  %body
+    .container
+      .page-area
+        #page-header
+          #header-branding
+            = link_to root_url, :class => 'home' do
+              %h1{:id => 'write_text'}= t('header.write')
+              %h1{:id => 'ideally_text'}= t('header.ideally')
+              = image_tag 'mascots/welcome_acorn.png', :class => 'acorn welcome'
+              %h1{:id => 'help_text'}= t('help.header')
+          %ul{:class => 'primary-links'}
+            - if current_admin_user
+              %li= link_to 'Log out', destroy_admin_user_session_url
+            %li= link_to t('help.links.home'), root_path
+          = clearfix
+        = flashes
+        = yield
+        #footer
+          .col50.left
+            WriteIdeally was thought up by an aspiring author, Gemma Brooks, and coded by herself and Josh McArthur in the summer of 2010.
+          .col50.right
+            = image_tag 'attribution/dogood.png', :alt => 'DoGood: Responsible Web Applications'
+            = content_tag :span, "Created by DoGood."
+

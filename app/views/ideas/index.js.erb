@@ -1,0 +1,7 @@
+$('div.idea-container').fadeOut(300, function() {
+  $(this).replaceWith($("<%= escape_javascript(render(:partial => 'ideas_listing')) %>"));
+  BindQTipIdeaTags()
+  $('.show_if_js').show();
+});
+$('div.idea-container').fadeIn(300);
+

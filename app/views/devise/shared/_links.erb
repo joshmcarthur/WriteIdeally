@@ -1,0 +1,28 @@
+
+<%- devise_links = [] %>
+
+<%- if controller_name != 'sessions' %>
+  <%- devise_links.push link_to('Sign in', new_session_path(resource_name)) %>
+<%- end %>
+
+<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  <%- devise_links.push link_to('Signup', new_registration_path(resource_name)) %>
+<%- end %>
+
+<%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
+  <%- devise_links.push link_to('Reset Password', new_password_path(resource_name)) %>
+<%- end %>
+
+<%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+  <%- devise_links.push link_to 'Resend Confirmation', new_confirmation_path(resource_name) %>
+<%- end %>
+
+<%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+  <%- devise_links.push link_to 'Resend Unlock Code', new_unlock_path(resource_name) %>
+<%- end %>
+
+<h6 class='sublink-heading'>Account Options:</h6>
+<ul class='sublinks'>
+  <%= raw devise_links.map { |link| "<li>\n#{link}\n</li>\n" }.join("|") %>
+</ul>
+

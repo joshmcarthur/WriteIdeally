@@ -1,0 +1,8 @@
+#user_login_container{:class => 'key_container'}
+  .col50
+    = render :partial => "form", :locals => {:resource => resource, :resource_name => resource_name, :devise_mapping => devise_mapping }
+  .col50.right.text
+    = image_tag 'mascots/welcome_back_acorn.png', :class => 'acorns login'
+    = t('body_text.login_page.welcome_back_message')
+    = render :partial => "devise/shared/links"
+

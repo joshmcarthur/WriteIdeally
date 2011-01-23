@@ -1,0 +1,8 @@
+%h1.idea-title-container
+  = @idea.title
+%p.idea-meta-container
+  = "Printed by #{current_user.username} <#{current_user.email}> on #{Time.now.localtime.strftime("%c")} using WriteIdeally."
+
+.idea-body-container
+  = raw @idea.body
+

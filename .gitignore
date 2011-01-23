@@ -1,0 +1,9 @@
+.bundle
+db/*.sqlite3
+config/database.yml
+config/initializers/secret_token.rb
+log/*.log
+tmp/**/*
+log/
+config/*.sphinx.conf
+

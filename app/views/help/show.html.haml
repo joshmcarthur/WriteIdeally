@@ -1,0 +1,20 @@
+.heading-container
+  %h1.key= @fragment.title
+  .help-tags
+    - unless @fragment.tag_list.nil? || @fragment.tag_list.blank?
+      %span.intro
+        = "...tagged with the following keywords"
+        = current_user ? "- click on a keyword to search for more tagged pages:" : ":"
+      - @fragment.tag_list.each do |tag|
+        = current_user ? link_to(tag, search_url(:klass => 'help_fragments', :terms => tag)) : tag
+
+.help-content
+  = @fragment.content.html_safe
+
+.help-disclaimer
+  The content on this page has been created by an WriteIdeally administrator, and was correct when it was written.
+  %br
+  As with anything else on the site, however, please contact us if anything is missing or incorrect.
+  %p
+  = signature
+

@@ -1,0 +1,55 @@
+%div{:style => 'color: #222; background-color: #EFEFEF; width: 550px; padding: 10px; font-family: Georgia, Times New Romain, serif font-size: 14px;' }
+
+  = image_tag "http://#{ActionMailer::Base.default_url_options[:host]}/images/mailing/writeideally_heading.jpg"
+
+  %p
+    %strong
+      = "Welcome to WriteIdeally, #{@resource.username}!"
+  %p
+    We're glad you've joined the WriteIdeally community, and have sent this email out to you to help get you started.
+  %p
+    First of all, to begin using your account, you need to 'confirm' it - this is a security mechanism that we use to make sure
+    that no bad guys are sneaking around, and to make sure that you definately wanted to join up to WriteIdeally - it almost goes without saying, of course - if you didn't sign up for WriteIdeally, you can ignore and/or delete this message, and you won't hear from us again.
+  %p{:style => 'background-color: #CCC; font-family: Georgia, Times New Romain, serif; font-size: 18px; color: #222; width: 90%; padding: 5%;'}
+    To confirm your account, please
+    = link_to("click here", confirmation_url(@resource, :confirmation_token => @resource.confirmation_token), :style => 'color: #000')
+    = ". WriteIdeally will open, and you will be automatically logged in. Once you have reached this step, you can return to this email and read on for some help to get started."
+  %h3 Getting Started
+  %p
+    Ready to go? Great, so are we!
+  %p
+    Here's a quick run-down of how things work - when you have one of your great ideas, you can jot it down into WriteIdeally, and
+    we store it for you - you can come back to it anytime you want, since all your ideas are placed in your
+    %em
+      ideas list
+    = "."
+    = "Your ideas list is the central point of WriteIdeally - from this list, you can search all of your ideas, change any of the ideas you have had previously and remove ideas you no longer want. To learn how to use the list though, it's best to just jump in and get going - head over to #{ActionMailer::Base.default_url_options[:host]} now, and create three ideas - call them whatever you want (Just skip past the other fields for now), and then try out the following tasks:"
+    %ul
+      %li
+        %strong
+          Editing Ideas:
+        When you first type in an idea title, or click the 'Edit' button on one of your already existing ideas, you are taken to the editing ideas page. At it's core, an idea has two key pieces of information you can store - a title, and some content. Try editing an idea now, by entering in some content, or changing the title (For bonus points, have a play with the editor while you enter some content - you can make headings, tables, and give some sections pretty colours!)
+      %li
+        %strong
+          Tagging Ideas:
+        With loads of ideas, it becomes difficult to keep control of how everything is going to fit together - this is where tags come in. Tags are little keywords that you can attach to any number of Ideas to remind you of their purpose, and 'group' them so that you can find what you are looking for easily. An Idea can have as many tags as you wish, but usually 4-5 are enough - for example, you could use the tag 'Plot' for all the ideas you have that might help you establish a start-to-finish story, or even something more specific like 'Jane Bennet' to help you group together ideas you've had about a particular character.
+        %p
+          Let's try tagging out - edit one of the ideas you have created by clicking on the 'Edit' button - you'll see the 'title' and 'content' sections of your idea, but also one more in between - '[Your idea name] is tagged with...' - followed by a text input field. Enter a few tags into this box, pressing the comma key ',' between each tag to create it - notice how, before you even save your idea, you can remove tags you have changed your mind about? You can also save the idea, and then come back to it later and remove a tag then.
+      %li
+        %strong
+          Searching Ideas:
+        If you have a great big list of ideas, that's great news - it shows that you're getting a lot of use out of WriteIdeally, and you've clearly mastered a whole bunch of built-in tools to help you manage your ideas. When it comes to finding something in particular, though, it's searching that is going to save the day - and we've baked an extremely powerful search machine into WriteIdeally to help you out.
+        %p
+          From your ideas list, you can access the search by clicking on the Magnifying Glass icon - this will take you to a page where you can enter in almost any part of your idea to find it - for example, to find an Idea titled 'My Brilliant Idea', with the content - 'This is how my absolutely stupendous idea works...', and that is tagged with 'fantastic', 'saving the world' and 'best-ever', any of these search terms would work: 'brilliant' would find it, 'absolutely stupendous', would find it, and even searching for 'saving the world' will bring back all of your ideas with this tag. Give it a go!
+  %p
+    Hopefully this quick overview has helped you get up to speed on what WriteIdeally can help you with, and how to get started - for even more help though, check out our dedicated help section over at
+    = link_to "http://#{ActionMailer::Base.default_url_options[:host]}/help", "http://#{ActionMailer::Base.default_url_options[:host]}/help"
+    = "."
+  %p
+    Last of all, we just wanted to thank you for signing up - we're big on helping out the world around us, and we really hope that you get a lot of value and use out of WriteIdeally.
+
+  %p
+    Thanks, and have a great day,
+  %br
+    The WriteIdeally Postman, with help from Josh and Gemma
+

@@ -1,0 +1,35 @@
+!!! html
+%html
+  %head
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  %body
+    %p
+      Hi there!
+    %p
+      = raw "This is an automated email from WriteIdeally (but don't worry, <strong>#{@invitation[:user].email}</strong> let us know your email address and asked us to send you this email!) - this isn't spam."
+    %p
+      The reason they asked us to email you is so we could fill you in about WriteIdeally - an online tool for managing all those bright ideas you've been having, with the aim of removing the distraction of keeping notes organized to help you write more efficiently.
+
+    %p
+      Here are some of the things WriteIdeally can help you with:
+      %ul
+        %li
+          %strong Too many post-it notes?
+          using WriteIdeally, you can come back later and change an idea you've had, or even remove it entirely - even better, all of your ideas are kept in a nice tidy list that you can browse, or search.
+        %li
+          %strong 'What was this for again...?'
+          all of your WriteIdeally ideas can be 'tagged' with keywords - this means that (apart from making things really easy to find), you can get a bit of a prompt to jog your memory if you've just jotted down a short idea.
+        %li
+          %strong Losing or accidently deleting documents and pieces of paper? (We all do it):
+          WriteIdeally is online, and so are your ideas. This means that you can get to them anywhere with internet access, and they are are safe and secure.
+
+    %p
+      = raw "Does this sound like something you might be interested in? If it is, head over to our signup page (#{link_to("http://www.writeideally.com/sign_up", new_user_registration_url)}) to get started. If it isn't, that's fine - it was nice meeting you, and you won't hear from us again (We wouldn't want to hassle you!)"
+
+    %p
+      Have a great day!
+    %p
+      The WriteIdeally Postman
+      %br
+      = link_to "www.writeideally.com", "www.writeideally.com"
+

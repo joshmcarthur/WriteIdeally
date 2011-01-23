@@ -1,0 +1,10 @@
+#help-about
+  = image_tag 'mascots/help_acorn.png', :style => 'float: right;'
+  Welcome to WriteIdeally Help - here's the best place to go if you get stuck on something. The easiest way to find some help is to use the search function below, but if you are just browsing, feel free to look through the full collection of articles on this page.
+  = render :partial => 'search_form'
+
+%ul#help
+  %li
+    = link_to 'New Article', new_help_url, :class => 'control'
+    = clearfix
+  = render :partial => 'help_fragment', :collection => @fragments

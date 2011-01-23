@@ -1,0 +1,17 @@
+!!! 5
+%html
+  %head
+    %title= t('title')
+    <link rel = 'icon' href = '/favicon.ico' />
+    <link rel = 'shortcut icon' type = 'application/x-icon' href = '/favicon.ico' />
+    = stylesheet_link_tag ['fonts', 'print']
+    = csrf_meta_tag
+
+    = yield :head
+  %body{:onload => "javascript:window.print();"}
+  .container
+    = yield
+    %hr
+      %h4 About WriteIdeally
+      = raw "WriteIdeally is a tool for optimizing and managing ideas to improve writing. Created by an aspiring author in 2010, it is freely available at #{link_to "http://www.writeideally.com", "http://www.writeideally.com"}."
+

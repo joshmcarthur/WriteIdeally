@@ -1,0 +1,28 @@
+= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => controller.action_name == "edit" ? :put : :post, :style => 'clear: both;'}) do |f|
+  = devise_error_messages!
+
+  %p
+    = f.label :username, :class => 'important'
+    = f.text_field :username, :class => 'text important signup-qtip', :title => "Your username is used to identify you when you login to WriteIdeally. It should be between 6 and 20 characters, and have alphabetic or numeric characters only."
+
+  %p
+    = f.label :email, :class => 'important'
+    = f.text_field :email, :class => 'text important signup-qtip', :title => "We need to know your email address so that we can do things such as: send you a welcome pack when you sign up, send you a link to reset your password if you ever forget it. The use of your email address is very strictly controlled and we DO NOT spam our users."
+
+  %p
+    = f.label :password, :class => 'important'
+    = f.password_field :password, :class => 'password important signup-qtip', :title => "It's important to choose a secure password - your password should be a mix of alphabetic characters, numeric characters and a couple of symbols."
+
+  %p
+    = f.label :password_confirmation, :class => 'important'
+    = f.password_field :password_confirmation, :class => 'password important signup-qtip', :title => "Please re-enter your password to make sure it has been entered correctly."
+  - if controller.action_name == "edit"
+    %p
+      = f.label :current_password, :class => 'important'
+      = f.password_field :current_password, :class => 'password important signup-qtip', :title => "We need to know your current password to make sure it is you requesting this change."
+    %p
+      = f.submit "Update", :class => 'key-submit'
+  - else
+    %p
+      = f.submit "Sign up", :class => 'key-submit', :style => 'margin-right: 7%;'
+
