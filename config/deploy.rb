@@ -37,8 +37,9 @@ end
 # these http://github.com/rails/irs_process_scripts
 
 task :symlink_shared_files do
-  run "#{try_sudo} ln -s #{File.join(shared_path, 'system', 'ckeditor_assets')} #{File.join(current_path, 'public', 'ckeditor_assets')}"
-  run "#{try_sudo} ln -s #{File.join(shared_path, 'system', 'database.yml')} #{File.join(current_path, 'config', 'database.yml')}"
+  run "ln -nfs #{shared_path}/system/database.yml #{release_path}/config/database.yml"
+  run "ln -nfs #{shared_path}/system/tokens.rb #{release_path}/config/initializers/tokens.rb"
+  run "ln -nfs #{shared_path}/system/ckeditor_assets #{release_path}/public/ckeditor_assets"
 end
 
 task :symlink_sphinx_indexes, :roles => [:app] do
