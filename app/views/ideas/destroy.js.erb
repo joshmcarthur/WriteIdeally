@@ -1,0 +1,9 @@
+$('#<%= dom_id(@idea, :line) %>').fadeOut(500, function() { $(this).remove(); });
+
+<%- if Idea.mine(current_user).count == 0 -%>
+  $('#ideas div.idea-container').slideUp(function() {
+    $('#ideas div.idea-container').html("<%= escape_javascript(render(:partial => 'ideas/noideas')) %>");
+    $('#ideas div.idea-container').slideDown();
+  });
+<%- end -%>
+

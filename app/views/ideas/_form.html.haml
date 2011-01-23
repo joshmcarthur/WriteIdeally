@@ -1,0 +1,13 @@
+.idea-title-container
+  - if @idea.title
+    = edit_title_on_click_tag(f, @idea)
+  - else
+    %span.input
+      = f.text_field(:title, :class => 'qtip', :title => 'Enter a title for your idea here.')
+.idea-tags-container
+  = f.label :new_tags, t('ideas.edit.tags', :title => @idea.title)
+  = f.text_field :new_tags, :class => 'tags-input', :value => @idea.tags_from(current_user).join(',')
+= f.cktext_area :body, :class => 'idea-body', :width => '90%'
+= f.submit t('ideas.edit.submit'), :class => 'key-submit'
+= raw clearfix
+

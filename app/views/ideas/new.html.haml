@@ -1,0 +1,15 @@
+= content_for :head do
+  = javascript_include_tag :ckeditor
+  = javascript_include_tag 'tags/jquery.tagsinput'
+  = stylesheet_link_tag '/javascripts/tags/jquery.tagsinput.css'
+  = javascript_include_tag 'autocomplete/jquery.autocomplete'
+  :javascript
+    $(document).ready(function() {
+      $('input.tags-input').tagsInput({'width': 'auto', 'height': '30px', 'autocomplete_url': '#{current_user.owned_tags.join(',')}'.split(',')});
+    });
+    
+= form_for @idea do |f|
+  = render :partial => 'form', :locals => {:f => f}
+
+  
+  

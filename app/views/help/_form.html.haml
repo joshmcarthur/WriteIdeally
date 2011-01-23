@@ -1,0 +1,9 @@
+.heading-container
+  = f.text_field :title, :class => 'text important'
+  .help-tags
+    = f.text_field :tag_list, :value => @fragment.tag_list, :class => 'tags-input'
+.help-stub
+  = f.label :stub, 'http://www.writeideally.com/help/', :id => 'stub_input_label'
+  = f.text_field :stub, :class => 'text important compact'
+= f.cktext_area :content, :width => '86%', :toolbar => 'Easy'
+= f.submit 'Publish Article', :class => 'key-submit'

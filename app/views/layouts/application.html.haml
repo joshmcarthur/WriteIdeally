@@ -1,0 +1,37 @@
+!!! 5
+%html
+  %head
+    %title= t('title')
+    <link rel = 'icon' href = '/favicon.ico' />
+    <link rel = 'shortcut icon' type = 'application/x-icon' href = '/favicon.ico' />
+    = stylesheet_link_tag ['reset', 'fonts', 'application', 'public', 'buttons'], :cache => 'writeideally'
+    /[if lt IE 9]
+    = stylesheet_link_tag 'ie.css'
+    /[endif]
+    = javascript_include_tag :defaults, 'jquery.qtip.js', 'jquery.equalheight.js', :cache => 'writeideally'
+    = csrf_meta_tag
+
+    = yield :head
+  %body
+    .container
+      .page-area
+        #page-header
+          #header-branding
+            = link_to root_url, :class => 'home', :title => "Click here to go back to the homepage" do
+              %h1{:id => 'write_text'}= t('header.write')
+              %h1{:id => 'ideally_text'}= t('header.ideally')
+              = image_tag 'mascots/welcome_acorn.png', :class => 'acorn welcome'
+          %ul{:class => 'primary-links'}
+            %li= link_to t("navigation.help"), help_index_url
+            %li= link_to t("navigation.about"), about_url
+            = current_user.is_a?(User) ? render(:partial => "layouts/authenticated_links") : render(:partial => "layouts/anonymous_links")
+          = clearfix
+        = flashes
+        = yield
+        #footer
+          .col50.left
+            WriteIdeally was thought up by an aspiring author, Gemma Brooks, and coded by herself and Josh McArthur in the summer of 2010.
+          .col50.right
+            = image_tag 'attribution/dogood.png', :alt => 'DoGood: Responsible Web Applications'
+            = link_to "Created by DoGood.", 'http://www.do-good.co.nz'
+

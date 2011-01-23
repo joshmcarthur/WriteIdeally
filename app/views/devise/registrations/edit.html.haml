@@ -1,0 +1,20 @@
+.wrapper
+  #edit_registration_form.col60
+    = render :partial => "form"
+    #cancel-account
+      %h3 Cancel account
+      %p
+        = raw "Unhappy? #{link_to "Cancel my account", registration_path(resource_name), :confirm => "Really? We'll be sad to see you go....", :method => :delete}"
+  #edit_registration_body_text.col40.right.text
+    %p
+      Can you think of someone else who might find WriteIdeally useful?
+      = image_tag 'mascots/send_invitation.png', :class => 'acorns send_invitation'
+      You can send them an invitation to join here, or tell your friends all about WriteIdeally on Facebook or Twitter!
+    = form_tag invitations_path do
+      = text_field_tag :email, "Friend's email...", :class => 'qtip-input text important', :title => "Enter your friend's email address so that we can send them an invitation"
+      = submit_tag 'Send', :class => 'key-submit small'
+    %p{:style => 'clear: both'}
+      We really hope that WriteIdeally is helping you with your writing - as authors though, you'll know how useful creative criticism can be - so, if you're having problems or would like a feature that isn't already here, contact us straight away so that we can help you out.
+    %p
+      %em Thanks for using WriteIdeally!
+

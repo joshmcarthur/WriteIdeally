@@ -1,0 +1,10 @@
+#new-idea{:class =>'col50'}
+  = form_for (@idea = Idea.new) do |f|
+    = image_tag 'mascots/new_idea_acorn.png', :class => 'acorns new_idea'
+    %em.tagline
+      = t('branding.prompt1')
+    %p
+      = f.text_field :title, :class => 'text important'
+      = hidden_field_tag :edit_after_create, true
+    = f.submit t('ideas.new.initial_submit'), :class => 'key-submit'
+
