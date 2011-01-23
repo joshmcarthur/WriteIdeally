@@ -6,4 +6,5 @@ log/*.log
 tmp/**/*
 log/
 config/*.sphinx.conf
+public/ckeditor_assets/**/*
 
