@@ -8,4 +8,5 @@ log/
 config/*.sphinx.conf
 public/ckeditor_assets/**/*
 db/sphinx/**/*
+config/deploy.rb
 
