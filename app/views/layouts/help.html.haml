@@ -4,9 +4,9 @@
     %title= t('help.title')
     <link rel = 'icon' href = '/favicon.ico' />
     <link rel = 'shortcut icon' type = 'application/x-icon' href = '/favicon.ico' />
-    = stylesheet_link_tag ['reset', 'fonts', 'application', 'help']
+    = stylesheet_link_tag ['reset', 'fonts', 'application', 'help'], :cache => 'writeideally_help'
 
-    = javascript_include_tag ['jquery.js', 'rails.js'], :cache => 'writeideally_help.js'
+    = javascript_include_tag ['jquery.js', 'rails.js'], :cache => 'writeideally_help'
     = csrf_meta_tag
 
     = yield :head
