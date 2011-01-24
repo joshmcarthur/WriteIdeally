@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>We're sorry, but something went wrong (500)</title>
+  <title>Something went wrong (500)</title>
   <style type="text/css">
-    body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
-    div.dialog {
-      width: 25em;
-      padding: 0 4em;
-      margin: 4em auto 0 auto;
-      border: 1px solid #ccc;
-      border-right-color: #999;
-      border-bottom-color: #999;
-    }
-    h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
+    body { width: 100%; height: 100%; background-color: #EFEFEF; color: #222; font-family: 'Georgia', 'Times New Roman', serif; }
+    img { border: none; }
+    div.container { width: 60%; margin: 10% auto; }
+    div.container img { float: left; margin-right: 5%; border: none; }
+    div.container div { float: right; width: 50%; }
+    div.container div h1 { font-size: 4em; font-style: italic; }
+    div.container div p { font-size: 1.5em; }
+    div.container div p a:link, div.container div p a:visited { color: #000; }
+    #logo { position: fixed; bottom: 0px; right: 0px; }
   </style>
 </head>
 
 <body>
-  <!-- This file lives in public/500.html -->
-  <div class="dialog">
-    <h1>We're sorry, but something went wrong.</h1>
-    <p>We've been notified about this issue and we'll take a look at it shortly.</p>
+  <div class='container'>
+    <img src='images/500/500.jpg' alt='500' />
+    <div class='404'>
+      <h1>Well that wasn't supposed to happen....</h1>
+      <p>
+      Looks like something's gone wrong here.
+      </p>
+      <p>
+      We would appreciate it if you could <a href="http://www.writeideally.com/about">contact</a> us to let us know, so that we can get onto fixing it.
+      </p>
+    </div>
   </div>
+  <a href="http://www.writeideally.com"><img src='images/404/writeideally_heading.jpg' id='logo' /></a>
 </body>
 </html>
