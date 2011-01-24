@@ -9,6 +9,7 @@ class AboutController < ApplicationController
     else
       flash[:alert] = "Sorry, but we couldn't send this through just now - this might be a site-wide problem, so please email us directly at hello@do-good.co.nz so that we can fix it right away."
     end
+    redirect_to root_url
   end
 
 end
