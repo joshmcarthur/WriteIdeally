@@ -48,5 +48,6 @@ Writeideally::Application.configure do
   config.active_support.deprecation = :notify
   config.action_mailer.default_url_options = { :host => 'writeideally.com' }
   config.action_mailer.delivery_method = :smtp
+  SITE_CONTACT_ADDRESS = "hello@do-good.co.nz"
 end
 

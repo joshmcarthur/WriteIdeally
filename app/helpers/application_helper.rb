@@ -5,11 +5,9 @@ module ApplicationHelper
   end
 
   def flashes
-    output = ""
-    output << "<div class='flash notice'>#{flash[:notice]}</div>\n" if flash[:notice]
-    output << "<div class='flash error'>#{flash[:error]}</div>\n" if flash[:error]
-    output << "<div class='flash error'>#{flash[:alert]}</div>\n" if flash[:alert]
-    output.html_safe
+    [:notice, :alert].collect do |key|
+      content_tag(:div, flash[key], :class => "flash #{key}") unless flash[key].blank?
+    end.join.html_safe
   end
 
   def idea_statistics

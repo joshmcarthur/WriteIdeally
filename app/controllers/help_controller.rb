@@ -23,7 +23,7 @@ class HelpController < ApplicationController
       flash[:notice] = "A help fragment for #{@fragment.stub} was successfully updated."
       redirect_to help_index_url
     else
-      flash[:error] = "Error updating fragment, please try again later."
+      flash[:alert] = "Error updating fragment, please try again later."
       redirect_to edit_help_path(@fragment)
     end
   end
@@ -38,7 +38,7 @@ class HelpController < ApplicationController
       flash[:notice] = "A help fragment for #{@fragment.stub} was successfully created."
       redirect_to help_index_url
     else
-      flash[:error] = "Error creating fragment, please try again."
+      flash[:alert] = "Error creating fragment, please try again."
       render :action => 'new'
     end
   end
@@ -48,7 +48,7 @@ class HelpController < ApplicationController
     if @fragment.destroy
       flash[:notice] = "A help fragment for #{@fragment.stub} was successfully removed."
     else
-      flash[:error] = "Error removing fragment, please try again later."
+      flash[:alert] = "Error removing fragment, please try again later."
     end
     redirect_to help_index_url
   end

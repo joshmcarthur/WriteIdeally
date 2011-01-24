@@ -23,7 +23,7 @@ class IdeasController < ApplicationController
       flash[:notice] = t('ideas.created.success', :title => @idea.title)
       params[:edit_after_create] ? redirect_to(edit_idea_path(@idea)) : redirect_to(root_path)
     else
-      flash[:error] = t('ideas.created.failure')
+      flash[:alert] = t('ideas.created.failure')
       redirect_to root_path and return
     end
   end
@@ -34,13 +34,13 @@ class IdeasController < ApplicationController
 
   def update
     @idea = Idea.mine(current_user).find(params[:id])
-    @idea.update_attributes(params[:idea]) ? (flash[:notice] = t('ideas.updated.success', :title => @idea.title)) : (flash[:error] = t('ideas.updated.failure'))
+    @idea.update_attributes(params[:idea]) ? (flash[:notice] = t('ideas.updated.success', :title => @idea.title)) : (flash[:alert] = t('ideas.updated.failure'))
     redirect_to root_path
   end
 
   def destroy
     @idea = Idea.mine(current_user).find(params[:id])
-    @idea.destroy ? (flash[:notice] = t('ideas.deleted.success', :title => @idea.title)) : (flash[:error] = t('ideas.deleted.failure', :title => @idea.title))
+    @idea.destroy ? (flash[:notice] = t('ideas.deleted.success', :title => @idea.title)) : (flash[:alert] = t('ideas.deleted.failure', :title => @idea.title))
     respond_to do |wants|
       wants.html { redirect_to root_path }
       wants.js { render }
