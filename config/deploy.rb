@@ -19,32 +19,7 @@ role :web, "173.230.146.234"                          # Your HTTP server, Apache
 role :app, "173.230.146.234"                          # This may be the same as your `Web` server
 role :db,  "173.230.146.234", :primary => true # This is where Rails migrations will run
 
-after :deploy, "symlink"
 
-task :before_update_code, :roles => [:app] do
-  thinking_sphinx.stop
-end
-
-task :after_update_code, :roles => [:app] do
-  symlink_sphinx_indexes
-  thinking_sphinx.configure
-  thinking_sphinx.start
-  symlink_shared_files
-end
-
-# If you are using Passenger mod_rails uncomment this:
-# if you're still using the script/reapear helper you will need
-# these http://github.com/rails/irs_process_scripts
-
-task :symlink_shared_files do
-  run "ln -nfs #{shared_path}/system/database.yml #{release_path}/config/database.yml"
-  run "ln -nfs #{shared_path}/system/tokens.rb #{release_path}/config/initializers/tokens.rb"
-  run "ln -nfs #{shared_path}/system/ckeditor_assets #{release_path}/public/ckeditor_assets"
-end
-
-task :symlink_sphinx_indexes, :roles => [:app] do
-  run "ln -nfs #{shared_path}/db/sphinx #{release_path}/db/sphinx"
-end
 
 namespace :deploy do
    task :start do ; end
@@ -52,5 +27,26 @@ namespace :deploy do
    task :restart, :roles => :app, :except => { :no_release => true } do
      run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
     end
+
+  desc "Link up Sphinx's indexes."
+  task :symlink_sphinx_indexes, :roles => [:app] do
+    run "ln -nfs #{shared_path}/system/db/sphinx #{release_path}/db/sphinx"
+  end
+
+  task :activate_sphinx, :roles => [:app] do
+    symlink_shared_files
+    symlink_sphinx_indexes
+    thinking_sphinx.configure
+    thinking_sphinx.start
+  end
+
+  task :symlink_shared_files, :roles => [:app] do
+    run "ln -nfs #{shared_path}/system/database.yml #{release_path}/config/database.yml"
+    run "ln -nfs #{shared_path}/system/tokens.rb #{release_path}/config/initializers/tokens.rb"
+    run "ln -nfs #{shared_path}/system/ckeditor_assets #{release_path}/public/ckeditor_assets"
+  end
+
+  before 'deploy:update_code', 'thinking_sphinx:stop'
+  after 'deploy:update_code', 'deploy:activate_sphinx'
 end
 
