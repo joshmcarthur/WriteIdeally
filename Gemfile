@@ -15,5 +15,4 @@ gem 'acts-as-taggable-on'
 gem 'thinking-sphinx', '2.0.0', :require => 'thinking_sphinx'
 gem 'capistrano'
 gem 'memcache-client'
-
-
+gem 'whenever'
