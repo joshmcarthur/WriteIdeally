@@ -2,9 +2,5 @@
   %h1{:class => 'key'}
     = t('ideas.list.heading')
   %div
-    - unless current_user.owned_tags.empty?
-      = form_tag ideas_path, {:method => :get, :remote => true} do
-        = select_tag :filter, options_for_select(current_user.owned_tags)
-        = submit_tag 'Filter', :class => 'small'
     = link_to "Search", new_search_url('ideas'), :class => 'search'
 

@@ -67,7 +67,7 @@ div.heading-container div form { float: left; height: 50px; line-height: 50px; m
 
 div.flash { border: solid 2px #2c2825; font-family: 'GentiumBasicRegular', serif; font-size: 1.2em; margin: 2% auto; width: 80%; padding: 2% 5%; color: #222; border-left: solid 10px #2c2825; }
 div.flash.notice { background-color: #b7e0ce; }
-div.flash.error { background-color: #d99e9a; }
+div.flash.error, div.flash.alert { background-color: #d99e9a; }
 a.search { width: 50px; height: 50px; background: transparent url(../images/search.png) no-repeat; float: right; display: block; color: transparent; }
 a.search:hover { width: 50px; height: 50px; background: transparent url(../images/search_hover.png) no-repeat }
 div.pagination-wrapper { width: 80%; padding: 2% 10%; height: 20px; line-height: 20px; background-color: #CCC; }

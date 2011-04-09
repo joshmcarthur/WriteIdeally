@@ -17,7 +17,6 @@ Writeideally::Application.routes.draw do
     end
   end
 
-  #TODO work out how to do resourceful DELETE calls from forms
   match 'ideas/:id/destroy' => 'ideas#destroy', :as => 'delete_idea'
   match 'search/:klass/new' => 'search#new', :as => 'new_search'
   match 'search/:klass' => 'search#search', :as => 'search'

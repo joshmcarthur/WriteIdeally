@@ -4,9 +4,9 @@ class DashboardController < ApplicationController
 
   def index
     if current_user
-      redirect_to ideas_url
+      redirect_to ideas_url, :flash => flash
     else
-      redirect_to new_user_registration_url
+      redirect_to new_user_registration_url, :flash => flash
     end
   end
 

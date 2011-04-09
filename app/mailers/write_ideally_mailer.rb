@@ -8,5 +8,12 @@ class WriteIdeallyMailer < ActionMailer::Base
       :subject => "[WriteIdeally] Invite from #{@invitation[:user].email}")
   end
 
+  def website_contact(parameters)
+    @info = {:name => parameters[:name], :email => parameters[:email], :message => parameters[:message]}
+    mail(
+         :to => SITE_CONTACT_ADDRESS,
+         :subject => "[URGENT: WriteIdeally] Website Contact"
+    )
+  end
 end
 
