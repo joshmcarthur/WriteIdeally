@@ -13,7 +13,6 @@ set :branch, "master"
 set :deploy_via, :remote_cache
 set :git_enabled_submodules, 1
 
-# Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
 role :web, "173.230.146.234"                          # Your HTTP server, Apache/etc
 role :app, "173.230.146.234"                          # This may be the same as your `Web` server
@@ -53,4 +52,6 @@ namespace :deploy do
      run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
     end
 end
+
+require 'whenever/capistrano'
 
