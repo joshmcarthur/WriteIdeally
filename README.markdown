@@ -19,11 +19,15 @@ Installation
 
 * Clone the source code:
   `git clone git@github.com:joshmcarthur/WriteIdeally.git`
+  `cd WriteIdeally`
 * Run Bundler to install dependencies
-  `cd WriteIdeally && bundle install`
-* Add a database.yml file to the project
-  `echo "development:\n\tadapter: sqlite3\n\tdatabase:
-db/writeideally_development.db.sqlite3" > config/database.yml`
+  `bundle install`
+* Add a database.yml file to the project with the contents:
+  ```
+    development: 
+      adapter: sqlite3
+      database: db/writeideally_development.db.sqlite3
+  ```
 * Run the database migrations
   `rake db:migrate`
 
