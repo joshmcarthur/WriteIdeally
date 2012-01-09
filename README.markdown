@@ -6,10 +6,10 @@ Background
 
 WriteIdeally is a pet project of
 [@sudojosh](http://www.joshmcarthur.com) and
-[@nz_gemma](http://twitter.com/nz_gemma), desiged to provide a simpel
+[@nz_gemma](http://twitter.com/nz_gemma), designed to provide a simple
 application for managing writing ideas online. It's very basic,
 providing more or less a simple CRUD functionality for ideas, along with
-a full-text search, as it's purpose was to give @nz_gemma some
+a full-text search, as it's purpose was to give some
 background into Rails development with a simple and relevant example.
 The application is hosted for free on [Heroku](http://heroku.com), at
 the URL [http://writeideally.com](http://writeideally.com).
@@ -42,7 +42,7 @@ whichever way you see fit.
 Author
 ------
 
-* Josh McArthur - [@sudojosh](http://twitter.com/sudojosh),
+* Josh McArthur - [Twitter](http://twitter.com/sudojosh),
   [Website](http://www.joshmcarthur.com)
-* Gemma Brooks - [@nz_gemma](http://twitter.com/nz_gemma)
+* Gemma Brooks - [Twitter](http://twitter.com/nz_gemma)
 
