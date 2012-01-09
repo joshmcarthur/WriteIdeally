@@ -18,21 +18,24 @@ Installation
 ------------
 
 Clone the source code:
+
 `git clone git@github.com:joshmcarthur/WriteIdeally.git`  
 
 `cd WriteIdeally`
 
 Run Bundler to install dependencies:
+
 `bundle install`
 
 Add a database.yml file to the project with the contents:
-```
+<pre>
   development:   
     adapter: sqlite3  
     database: db/writeideally_development.db.sqlite3
-```
+</pre>
 
 Run the database migrations:
+
 `rake db:migrate`
 
 Following these steps, you should be able to run `rails server`, and
