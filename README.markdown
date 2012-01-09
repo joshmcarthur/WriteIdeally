@@ -18,14 +18,14 @@ Installation
 ------------
 
 * Clone the source code:
-  `git clone git@github.com:joshmcarthur/WriteIdeally.git`
+  `git clone git@github.com:joshmcarthur/WriteIdeally.git`  
   `cd WriteIdeally`
 * Run Bundler to install dependencies
   `bundle install`
 * Add a database.yml file to the project with the contents:
   ```
-    development: 
-      adapter: sqlite3
+    development:   
+      adapter: sqlite3  
       database: db/writeideally_development.db.sqlite3
   ```
 * Run the database migrations
