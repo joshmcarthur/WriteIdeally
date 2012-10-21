@@ -1,9 +1,0 @@
-.idea-container
-  - unless @ideas.nil? || @ideas.blank?
-    %ul{:id => 'ideas-list'}
-      = render :partial => 'ideas/idea_line', :collection => @ideas
-    .pagination-wrapper
-      = will_paginate @ideas
-  - else
-    = render :partial => "ideas/noideas"
-

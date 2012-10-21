@@ -1,9 +1,0 @@
-#search_container{:class => 'key_container'}
-  .col50
-    = form_tag search_path(params[:class]), :method => :get do
-      = search_field_tag :terms, "", :class => 'important text qtip', :title => "Enter what it is you are looking for, then hit the return key to search.", :style => 'margin-top: 15%;'
-      = submit_tag "Search", :class => 'key-submit'
-  .col50.right.text
-    = image_tag 'mascots/search_acorn.png', :class => 'acorns search'
-    = t('body_text.new_search.about_searching')
-
