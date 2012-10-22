@@ -17,5 +17,8 @@
 # Ignore RVM files
 .rvmrc
 
+# Ignore .DS_Store files
+.DS_Store
+
 # Ignore config files
 /config/*.yml
