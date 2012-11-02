@@ -1,0 +1,15 @@
+<%= form_for :user, :url => '/users/sign_up' do |f| %>
+	<%= f.text_field :username, :placeholder => "Username" %>
+	<%= content_tag :span, 'This is used to identify you on WriteIdeally - it can be anything you like!', :class => 'help-block' %>
+
+	<%= f.email_field :email, :placeholder => 'Email' %>
+	<%= content_tag :span, "Where we should send you notifications, etc. (we don't send anything other than notifications, and don't share your email. We hate spam.)", :class => 'help-block' %>
+
+	<%= f.text_field :password, :placeholder => "Passphrase" %>
+	<%= f.text_field :password_confirmation, :placeholder => "Confirm Passphrase" %>
+	<%= content_tag :span, "Choose something that would be hard to guess? How about your favourite book quote?", :class => 'help-block' %>
+
+	<hr />
+
+	<%= submit_tag "Sign Up", :class => 'btn btn-primary btn-block' %>
+<% end %>

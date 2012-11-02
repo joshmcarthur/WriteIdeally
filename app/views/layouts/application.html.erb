@@ -34,7 +34,7 @@
     <!-- Size should be 32 x 32 pixels -->
     <%= favicon_link_tag 'images/favicon.ico', :rel => 'shortcut icon' %>
   </head>
-  <body>
+  <body class="application">
 
     <div class="navbar main navbar-fixed-top">
       <div class="navbar-inner">
@@ -47,31 +47,29 @@
           <a class="brand" href="#">WriteIdeally</a>
           <div class="container nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
+              <li><%= link_to "Plot Planning", "/"  %></li>
+              <li><%= link_to "Characters", "/characters"  %></li>
+              <li><%= link_to "Objects", "/objects"  %></li>
             </ul>
+
+            <%= render 'shared/account_controls' %>
           </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
 
-    <div class="container">
-        <div class="row">
-          <div class="span9">
-             <%= yield %>
-          </div>
-          <div class="span3">
-            <div class="well sidebar-nav">
-              <h3>Sidebar</h3>
-              <ul class="nav nav-list">
-                <li class="nav-header">Sidebar</li>
-                <li><%= link_to "Link1", "/path1"  %></li>
-                <li><%= link_to "Link2", "/path2"  %></li>
-                <li><%= link_to "Link3", "/path3"  %></li>
-              </ul>
-            </div><!--/.well -->
-          </div><!--/span-->
+    <div class="container-fluid">
+        <div class="row-fluid">
+          <% if content_for?(:sidebar) %>
+            <div class="span3">
+              <%= yield :sidebar %>
+            </div><!--/span-->
+            <div class="span9">
+              <%= yield %>
+            </div>
+          <% else %>
+            <%= yield %>
+          <% end %>
         </div><!--/row-->
 
       <footer>

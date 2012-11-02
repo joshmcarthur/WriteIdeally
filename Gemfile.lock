@@ -169,6 +169,7 @@ DEPENDENCIES
   guard-rspec
   jbuilder
   jquery-rails
+  less-rails
   pg
   rails (= 3.2.8)
   rspec-rails

@@ -1,0 +1,20 @@
+<ul class="nav pull-right">
+	<li class="dropdown">
+		<a class="dropdown-toggle" data-toggle="dropdown" href="/signup">
+			Sign Up <strong class="caret"></strong>
+		</a>
+
+		<div class="dropdown-menu">
+			<%= render :partial => 'shared/sign_up_form' %>
+		</div>
+	</li>
+
+	<li class="divider-vertical"></li>
+	<li class="dropdown">
+		<a class="dropdown-toggle" href="/users/sign_in" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
+		<div class="dropdown-menu">
+			<%= render :partial => 'shared/sign_in_form' %>
+
+		</div>
+	</li>
+</ul>
