@@ -1,14 +1,14 @@
 <% content_for :sidebar, nil %>
 
 <div class="hero-unit home span10">
-	<div class="row">
+	<div class="row points">
 		<div class="span4">
 			<%= glyph :'sitemap' %>
 			<h2>First point</h2>
 			<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
 		</div>
 		<div class="span4">
-			<%= glyph :'user-md' %>
+			<%= glyph :'group' %>
 			<h2>Second point</h2>
 				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
 		</div>
@@ -16,6 +16,15 @@
 			<%= glyph :'key' %>
 			<h2>Third point</h2>
 			<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="span12">
+			<%= link_to root_path, :class => 'pull-right btn btn-large btn-primary' do %>
+				Try it now for free!
+				<%= glyph :'arrow-right' %>
+			<% end %>
 		</div>
 	</div>
 </div>
