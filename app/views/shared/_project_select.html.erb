@@ -1,0 +1,11 @@
+<ul class="nav pull-left">
+	<li class="dropdown">
+		<%= link_to '#', :'data-toggle' => 'dropdown', :class => 'dropdown-toggle' do %>
+			Projects
+			<%= content_tag :strong, '', :class => 'caret' %>
+		<% end %>
+		<ul class="dropdown-menu" id="projects">
+			<li><%= link_to 'Sign up or sign in to save this project', '#' %></li>
+		</ul>
+	</li>
+</ul>

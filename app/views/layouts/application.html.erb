@@ -47,6 +47,8 @@
 
           <%= link_to 'WriteIdeally', root_path, :class => 'brand' %>
           <div class="container nav-collapse">
+            <%= yield :navbar %>
+            <%= render 'shared/project_select' %>
             <ul class="nav">
               <li><%= link_to "Plot Planning", "/"  %></li>
               <li><%= link_to "Characters", "/characters"  %></li>
