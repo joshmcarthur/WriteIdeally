@@ -1,4 +1,4 @@
-<%= form_for :user, :url => '/users/sign_up' do |f| %>
+<%= form_for :user, :url => user_registration_path do |f| %>
 	<%= f.text_field :username, :placeholder => "Username" %>
 	<%= content_tag :span, 'This is used to identify you on WriteIdeally - it can be anything you like!', :class => 'help-block' %>
 
