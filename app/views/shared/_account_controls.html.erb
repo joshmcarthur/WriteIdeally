@@ -1,9 +1,9 @@
 <ul class="nav pull-right">
 	<li class="dropdown">
-		<a class="dropdown-toggle" data-toggle="dropdown" href="/signup">
-			Sign Up <strong class="caret"></strong>
-		</a>
-
+		<%= link_to new_user_registration_url, :'data-toggle' => 'dropdown', :class => 'dropdown-toggle' do %>
+			Sign Up
+			<%= content_tag :strong, '', :class => 'caret' %>
+		<% end %>
 		<div class="dropdown-menu">
 			<%= render :partial => 'shared/sign_up_form' %>
 		</div>
@@ -11,10 +11,12 @@
 
 	<li class="divider-vertical"></li>
 	<li class="dropdown">
-		<a class="dropdown-toggle" href="/users/sign_in" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
+		<%= link_to new_user_session_url, :'data-toggle' => 'dropdown', :class => 'dropdown-toggle' do %>
+			Sign In
+			<%= content_tag :strong, '', :class => 'caret' %>
+		<% end %>
 		<div class="dropdown-menu">
 			<%= render :partial => 'shared/sign_in_form' %>
-
 		</div>
 	</li>
 </ul>
