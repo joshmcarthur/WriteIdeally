@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121110103849) do
+ActiveRecord::Schema.define(:version => 20121111054818) do
 
   create_table "plot_points", :force => true do |t|
     t.integer  "project_id"
@@ -21,11 +21,14 @@ ActiveRecord::Schema.define(:version => 20121110103849) do
   end
 
   create_table "projects", :force => true do |t|
-    t.string   "name"
+    t.string   "name",                          :null => false
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.boolean  "trial",      :default => false, :null => false
   end
+
+  add_index "projects", ["trial"], :name => "index_projects_on_trial"
 
   create_table "sections", :force => true do |t|
     t.integer  "plot_point_id"
