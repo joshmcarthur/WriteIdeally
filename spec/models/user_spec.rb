@@ -14,4 +14,5 @@ describe User do
   end
 
   it { should validate_presence_of(:username) }
+  it { should have_many(:projects) }
 end

@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   attr_accessor :login
 
   validates_presence_of :username
+  has_many :projects
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :login, :email, :password, :password_confirmation

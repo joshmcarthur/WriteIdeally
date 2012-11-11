@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Project:</b>
+  <%= @plot_point.project_id %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @plot_point.title %>
+</p>
+
+
+<%= link_to 'Edit', edit_plot_point_path(@plot_point) %> |
+<%= link_to 'Back', plot_points_path %>
