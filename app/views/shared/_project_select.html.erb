@@ -1,11 +1,15 @@
 <ul class="nav pull-left">
 	<li class="dropdown">
 		<%= link_to '#', :'data-toggle' => 'dropdown', :class => 'dropdown-toggle' do %>
-			Projects
+			<% if @project %>
+				<%= @project.name %>
+			<% else %>
+				Projects
+			<% end %>
 			<%= content_tag :strong, '', :class => 'caret' %>
 		<% end %>
 		<ul class="dropdown-menu" id="projects">
-			<li><%= link_to 'Sign up or sign in to save this project', '#' %></li>
+			<li><%= link_to 'Sign up or sign in to save this project', new_user_registration_path, :class => 'registration-toggle' %></li>
 		</ul>
 	</li>
 </ul>
